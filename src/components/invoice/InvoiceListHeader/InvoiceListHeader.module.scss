@@ -1,0 +1,42 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+
+  @include breakpoints.media-up(laptop) {
+    margin-bottom: 4.063rem;
+  }
+
+  &__caption {/**/}
+  &__title {
+    margin: 0 0 var(--spacing-xxs);
+    color: var(--color-text-secondary);
+
+    @include breakpoints.media-up(laptop) {
+      margin-bottom: var(--spacing-xs);
+    }
+  }
+  &__subtitle {
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-xs);
+    color: var(--color-text-tertiary);
+    margin: 0;
+  }
+
+  &__filter {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    letter-spacing: var(--letter-spacing-xs);
+    cursor: pointer;
+    //@todo add hover effect
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.125rem;
+  }
+}

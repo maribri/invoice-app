@@ -1,0 +1,30 @@
+@use '../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  font-weight: var(--font-weight-regular);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-xxl);
+
+  @include breakpoints.media-up(laptop) {
+    //
+  }
+}
+
+h1 { font-size: var(--font-size-xxl); line-height: 1.125; } //@todo variables
+h2 { font-size: var(--font-size-lg); line-height: 1.1; }
+h3 { font-size: var(--font-size-md); line-height: var(--line-height-normal); letter-spacing: var(--letter-spacing-md); }
+h4 { font-size: var(--font-size-xs); line-height: var(--line-height-base); letter-spacing: var(--letter-spacing-xs); }
+
+p {
+  margin-bottom: var(--spacing-md);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

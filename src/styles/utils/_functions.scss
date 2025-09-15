@@ -1,0 +1,30 @@
+// Strip units for safety
+@function strip-units($num) {
+  @if type-of($num) == 'number' and not unitless($num) {
+    @return $num / ($num * 0 + 1);
+  }
+  @return $num;
+}
+
+// px to rem (default base 16)
+@function rem($px, $base: 16) {
+  @return (strip-units($px) / strip-units($base)) * 1rem;
+}
+
+// px to vw (fluid sizing)
+@function vw($px, $viewport: 375) {
+  @return (strip-units($px) / strip-units($viewport)) * 100vw;
+}
+
+// Z-index function to maintain a consistent stack
+$z-indexes: (
+  "modal": 100,
+  "dropdown": 50,
+  "header": 10,
+  "default": 1,
+  "below": -1
+);
+
+@function z($key) {
+  @return map-get($z-indexes, $key);
+}

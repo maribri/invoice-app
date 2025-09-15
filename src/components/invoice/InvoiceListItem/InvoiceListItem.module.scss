@@ -1,0 +1,105 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.invoice-item {
+  background-color: var(--color-card);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-card);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 0.625rem 0.625rem -0.625rem rgba(72, 84, 159, 0.10);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-auto-rows: auto;
+  row-gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  @include breakpoints.media-up(tablet) {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+    grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr auto;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  &__id {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+
+    @include breakpoints.media-down(tablet) {
+      margin-bottom: var(--spacing-md);
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+  &__hash {
+    color: var(--color-text-primary);
+  }
+  &__date {
+    color: var(--color-text-primary);
+
+    @include breakpoints.media-down(tablet) {
+      margin-bottom: -0.125rem;
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+  &__due {
+    color: var(--color-text-tertiary);
+  }
+  &__client {
+    color: #858BB2;//@todo theme tokens
+    //color: var(--color-gray);
+
+    @include breakpoints.media-down(tablet) {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+    }
+  }
+  &__total {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-normal);//@todo maybe is redundant
+    letter-spacing: var(--letter-spacing-md);
+
+    @include breakpoints.media-down(tablet) {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    @include breakpoints.media-up(tablet) {
+      text-align: right;
+    }
+  }
+  &__status {
+    @include breakpoints.media-down(tablet) {
+      margin-top: 0.125rem;
+      width: 6.5rem;
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      align-self: start;
+      justify-self: end;
+      justify-content: center;
+    }
+  }
+  &__arrow {
+    position: relative;
+    right: -0.125rem;
+    justify-self: end;
+    font-size: 0.625rem;
+
+    @include breakpoints.media-down(tablet) {
+      display: none;
+    }
+
+    & > svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+}

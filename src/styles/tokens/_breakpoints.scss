@@ -1,0 +1,19 @@
+@use 'sass:map';
+// @todo think about moving it to mixins
+$breakpoints: (
+        tablet: 768px,
+        laptop: 1024px,
+        desktop: 1440px,
+);
+
+@mixin media-up($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+
+  @media (min-width: $size) { @content; }
+}
+
+@mixin media-down($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+
+  @media (max-width: $size) { @content; }
+}

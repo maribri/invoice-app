@@ -1,0 +1,11 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.form {
+  position: fixed;
+  padding-top: 15vh;
+  text-align: center;
+  width: 20rem;
+  height: 100vh;
+  color: var(--color-light);
+  background-color: var(--color-slate);
+}

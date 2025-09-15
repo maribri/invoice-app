@@ -1,0 +1,26 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.theme-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+
+  @include breakpoints.media-up(laptop) {
+    padding: var(--spacing-lg);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  & > svg {
+    width: 1em;
+    height: 1em;
+  }
+}

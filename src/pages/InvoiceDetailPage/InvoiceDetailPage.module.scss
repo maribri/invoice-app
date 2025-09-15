@@ -1,0 +1,13 @@
+@use '../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.page {
+  max-width: 48.625rem;
+  margin: 4.5rem auto;
+  padding: var(--spacing-xl) var(--spacing-lg) 0;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-xs);
+
+  @include breakpoints.media-up(laptop) {
+    padding-top: 0;
+  }
+}

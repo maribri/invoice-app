@@ -1,0 +1,33 @@
+.badge {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 6.5rem;
+  padding: var(--spacing-sm) /*var(--spacing-md) var(--spacing-sm) 1.125rem*/;
+  border-radius: var(--border-radius-sm);
+  background-color: color-mix(in srgb, currentColor, transparent 95%); // @todo create a fallback
+
+  color: var(--color-badge-default);
+  text-transform: capitalize;
+  font-weight: var(--font-weight-bold);
+  //line-height: 1.25;
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-xs);
+
+  &--paid {
+    color: var(--color-success);
+  }
+  &--pending {
+    color: var(--color-warning);
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: var(--spacing-xs);
+    height: var(--spacing-xs);
+    border-radius: 50%;
+    margin-right: var(--spacing-xs);
+    background-color: currentColor;
+  }
+}

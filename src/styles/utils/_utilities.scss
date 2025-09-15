@@ -1,0 +1,23 @@
+@use '../tokens/breakpoints' as bp;
+
+@mixin responsive-hidden-up($breakpoint) {
+  @include bp.media-up($breakpoint) {
+    display: none !important;
+  }
+}
+
+@mixin responsive-hidden-down($breakpoint) {
+  @include bp.media-down($breakpoint) {
+    display: none !important;
+  }
+}
+
+// @todo think about the naming and if it is needed at all
+.tablet-hidden-up { @include responsive-hidden-up(tablet); }
+.tablet-hidden-down { @include responsive-hidden-down(tablet); }
+
+.laptop-hidden-up { @include responsive-hidden-up(laptop); }
+.laptop-hidden-down { @include responsive-hidden-down(laptop); }
+
+.desktop-hidden-up { @include responsive-hidden-up(desktop); }
+.desktop-hidden-down { @include responsive-hidden-down(desktop); }
