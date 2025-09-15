@@ -1,0 +1,9 @@
+export { default as IconArrowDown } from './icon-arrow-down.svg?react';
+export { default as IconArrowLeft } from './icon-arrow-left.svg?react';
+export { default as IconArrowRight } from './icon-arrow-right.svg?react';
+export { default as IconCalendar } from './icon-calendar.svg?react';
+export { default as IconCheck } from './icon-check.svg?react';
+export { default as IconDelete } from './icon-delete.svg?react';
+export { default as IconMoon } from './icon-moon.svg?react';
+export { default as IconPlus } from './icon-plus.svg?react';
+export { default as IconSun } from './icon-sun.svg?react';
