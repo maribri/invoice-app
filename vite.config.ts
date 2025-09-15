@@ -7,7 +7,7 @@ const host = process.env.VITE_HOST || 'localhost';
 const port = Number.parseInt(process.env.VITE_PORT || '5173', 10);
 
 export default defineConfig({
-    base: 'invoice-app',
+    base: '/invoice-app/',
     plugins: [react(), svgr()],
     resolve: {
         alias: {
