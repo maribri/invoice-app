@@ -6,6 +6,7 @@ export interface Address {
 }
 
 export interface Item {
+    id: string;
     name: string;
     quantity: number;
     price: number;
@@ -33,4 +34,3 @@ export interface Invoice {
 export type NewInvoice = Omit<Invoice, 'id' | 'total' | 'status'> & { status?: InvoiceStatus };
 export type UpdatableInvoiceFields = Partial<Omit<Invoice, 'id'>>;
 export type { InvoiceStatus };
-

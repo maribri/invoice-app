@@ -31,6 +31,7 @@
   --color-border: var(--color-light-gray);
   --color-bg: var(--color-off-white);
   --color-card: var(--color-white);
+  --color-panel: var(--color-white);
   --color-badge-default: var(--color-indigo);
 
   /*&[data-theme='light'] {
@@ -42,12 +43,17 @@
   }*/
 
   &[data-theme='dark'] {
+    --color-tertiary: var(--color-dark-blue);
+    --color-tertiary-hover: var(--color-white);
+
+    --color-secondary-hover: var(--color-slate);
     --color-text-primary: var(--color-light-gray);
     --color-text-secondary: var(--color-white);
     --color-text-tertiary: var(--color-light-gray);
     --color-border: var(--color-dark-blue);
     --color-bg: var(--color-navy);
     --color-card: var(--color-slate);
+    --color-panel: var(--color-navy);
     --color-badge-default: var(--color-light-gray);
   }
 }

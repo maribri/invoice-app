@@ -14,7 +14,7 @@
   @include breakpoints.media-up(tablet) {}
   @include breakpoints.media-up(laptop) {
     flex-direction: column;
-    width: 6.4375rem;
+    width: 6.4375rem; // @todo tokenize
     height: 100vh;
     border-radius: 0 1.25rem 1.25rem 0;
   }
@@ -72,7 +72,7 @@
 
   &__avatar {
     --border-color: #494E6E;
-    //padding: var(--spacing-lg) 0;
+    padding: var(--spacing-lg) 0;
     width: 4.5rem;
     display: flex;
     justify-content: center;

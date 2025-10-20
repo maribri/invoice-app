@@ -1,0 +1,13 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.input {
+  width: 100%; // @todo to mixin
+  padding: var(--spacing-md) 1.25rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--letter-spacing-xs);
+  background-color: var(--color-card);
+  border-radius: var(--border-radius-xs);
+  border: 1px solid var(--color-border);
+}
