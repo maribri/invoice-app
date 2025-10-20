@@ -1,0 +1,12 @@
+@use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
+
+.field {
+  flex-grow: 1;
+  flex-basis: calc(50% - var(--spacing-sm));
+  display: grid;
+  gap: 0.625rem;
+
+  &__label {
+    font-size: var(--font-size-xs);
+  }
+}

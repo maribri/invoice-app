@@ -1,15 +1,179 @@
 @use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
-
-.form {
-  position: fixed;
-}
+@use '../../../styles/base/base';
 
 .overlay {
   position: fixed;
-  top: 0;
+  top: 4.5rem;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1001;
+
+  @include breakpoints.media-up(laptop) {
+    top: 0;
+    left: 6.4375rem;
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  padding: 3.5rem 3.5rem 0;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--color-panel);
+
+  @include breakpoints.media-up(laptop) {
+    width: calc(100% - 6.4375rem);
+    max-width: 38.5rem;
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+  }
+
+  &--opened {
+    transform: translateX(0);
+  }
+}
+
+.form {
+  &__header {
+    margin: 0 0 var(--spacing-xxl);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xl);
+    line-height: 1.33;
+    letter-spacing: var(--letter-spacing-xs);
+  }
+
+  &__hash {
+    color: var(--color-text-tertiary);
+  }
+
+  &__section {
+    display: grid;
+    row-gap: 1.375rem;
+    margin: 0 0 var(--spacing-lg);
+    padding: 0;
+    min-width: 0;
+    border: none;
+  }
+
+  &__legend {
+    @extend h4 !optional;
+    margin: 0 0 var(--spacing-lg);
+    color: var(--color-primary);
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    //grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+
+    @include breakpoints.media-up(laptop) {
+      flex-wrap: nowrap;
+      //display: grid;
+      //grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /*&--2col {
+      grid-template-columns: 1fr;
+
+      @include breakpoints.media-up(laptop) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }*/
+  }
+
+  &__items {
+    margin: 2.125rem 0 var(--spacing-lg);
+  }
+
+  &__actions {
+    margin: auto -3.5rem 0;
+    padding: var(--spacing-xl) 3.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-xs);
+    background-color: var(--color-panel);
+    border-top-right-radius: var(--border-radius-lg);
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -15px 28px 0 rgba(72, 84, 159, 0.1);// @todo compare with design
+    //box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+  }
+
+  &__discard-btn {
+    margin-right: auto;
+  }
+}
+
+.items {
+  &__title {
+    margin: 0 0 var(--spacing-md);
+    color: #777F98;
+    line-height: var(--line-height-normal);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-xs);
+  }
+
+  &__headers {
+    //@extend .item-row !optional;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-xs);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr auto;
+    gap: var(--spacing-md);
+    margin-bottom: 1.125rem;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__delete-btn { // @todo refactor, use common button, check gaps
+    border-radius: var(--border-radius-xs);
+    background-color: transparent;
+
+    & > span {
+      width: 2.25rem;
+      height: 2.25rem;
+      font-size: 1rem;
+      color: var(--color-text-tertiary);
+      background-color: transparent;
+    }
+
+    & svg {
+      fill: currentColor;
+      width: 0.815em;
+      height: 1em;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      & > span {
+        color: var(--color-danger);
+      }
+    }
+  }
+
+  &__add-btn {
+  /* */
+  }
 }

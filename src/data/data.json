@@ -21,7 +21,7 @@
       "country": "United Kingdom"
     },
     "items": [
-      { "name": "Brand Guidelines", "quantity": 1, "price": 1800.90, "total": 1800.90 }
+      { "id": "RT3080-guidelines-68784", "name": "Brand Guidelines", "quantity": 1, "price": 1800.90, "total": 1800.90 }
     ],
     "total": 1800.90
   },
@@ -47,8 +47,8 @@
       "country": "United Kingdom"
     },
     "items": [
-      { "name": "Banner Design", "quantity": 1, "price": 156.00, "total": 156.00 },
-      { "name": "Email Design", "quantity": 2, "price": 200.00, "total": 400.00 }
+      { "id": "XM9141-bannerdesign--68784", "name": "Banner Design", "quantity": 1, "price": 156.00, "total": 156.00 },
+      { "id": "XM9141-emaildesign-68784", "name": "Email Design", "quantity": 2, "price": 200.00, "total": 400.00 }
     ],
     "total": 556.00
   },
@@ -74,7 +74,7 @@
       "country": "United Kingdom"
     },
     "items": [
-      { "name": "Website Redesign", "quantity": 1, "price": 14002.33, "total": 14002.33 }
+      { "id": "RG0314-websiteredesign-68784", "name": "Website Redesign", "quantity": 1, "price": 14002.33, "total": 14002.33 }
     ],
     "total": 14002.33
   },
@@ -100,8 +100,8 @@
       "country": "United Kingdom"
     },
     "items": [
-      { "name": "Logo Sketches", "quantity": 1, "price": 102.04, "total": 102.04 },
-      { "name": "Logo Design", "quantity": 1, "price": 3000.00, "total": 3000.00 }
+      { "id": "FV2353-logosketches-68784", "name": "Logo Sketches", "quantity": 1, "price": 102.04, "total": 102.04 },
+      { "id": "FV2353-logodesign-68784", "name": "Logo Design", "quantity": 1, "price": 3000.00, "total": 3000.00 }
     ],
     "total": 3102.04
   }

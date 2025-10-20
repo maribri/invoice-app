@@ -1,5 +1,35 @@
 @use '../../../styles/tokens/_breakpoints.scss' as breakpoints;
 
 .input {
-  border: none;
+  width: 100%;
+  padding: var(--spacing-md) 1.25rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--letter-spacing-xs);
+  background-color: var(--color-card);
+  border-radius: var(--border-radius-xs);
+  border: 1px solid var(--color-border);
+
+    &::placeholder {
+      color: color-mix(in srgb, var(--color-text-secondary) 40%, var(--color-white));
+    }
+
+  &[type="date"] {// @todo hover styles
+    position: relative;
+    background: url("../../../assets/icons/icon-calendar.svg") no-repeat right 1rem center;
+    background-size: 1rem 1rem;
+    cursor: pointer;
+
+    &::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      //filter: invert(1);
+    }
+  }
 }

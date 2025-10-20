@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 
 export interface ButtonProps {
   // Button contents
-  children: React.ReactNode;
+  children?: React.ReactNode;
    // Button variant
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
    // Optional click handler
@@ -23,7 +23,7 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  children,
+  children = null,
   variant = 'primary',
   onClick,
   disabled = false,
@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
     styles.button,
     styles[`button--${variant}`],
     icon && styles['button--iconed'],
-    iconOnly && styles['button--icon_only'],
+    iconOnly && styles['button--icon-only'],
     wide && styles['button--wide'],
     className
   ].filter(Boolean).join(' ');
