@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { forwardRef, JSX, useEffect, useRef } from 'react';
 import styles from './Input.module.scss';
 
-interface InputProps {
-    type: React.HTMLInputTypeAttribute;
-    id?: string;
-    name?: string;
-    value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
-    placeholder?: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    className?: string;
+interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {
     isFirst?: boolean;
-    readOnly?: boolean;
+    className?: string;
 }
 
-const Input: React.FC<InputProps> = ({ type, id, name, value, placeholder, onChange, className, isFirst, readOnly }) => {
-    return (
-        <input type={type}
-               id={id}
-               name={name || id}
-               value={value}
-               placeholder={placeholder}
-               onChange={onChange}
-               className={`${styles.input} ${className || ''}`}
-               data-autofocus={isFirst}
-               readOnly={readOnly}
-        />
-    );
-};
+const Input = forwardRef<HTMLInputElement, InputProps>(
+    ({ isFirst = false, className, id, name, ...rest }, forwardedRef): JSX.Element => {
+        const internalRef = useRef<HTMLInputElement>(null);
+        
+        const inputRef = (forwardedRef || internalRef) as React.RefObject<HTMLInputElement>;
+
+        useEffect(() => {
+            if (isFirst && inputRef && 'current' in inputRef && inputRef.current) {
+                const focusTimer = setTimeout(() => {
+                    inputRef.current?.focus();
+                }, 150);
+                
+                return () => clearTimeout(focusTimer);
+            }
+        }, [isFirst, inputRef]);
+
+        return (
+            <input
+                ref={inputRef}
+                id={id}
+                name={name || id}
+                className={[styles.input, className].filter(Boolean).join(' ')}
+                {...rest}
+            />
+        );
+    }
+);
+
+Input.displayName = 'Input';
 
 export default Input;

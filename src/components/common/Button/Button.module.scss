@@ -52,7 +52,7 @@
   }
 
   &--disabled, &:disabled {
-    background-color: gray;//@todo real color
+    opacity: 0.7;//@todo real color
     cursor: not-allowed;
   }
 

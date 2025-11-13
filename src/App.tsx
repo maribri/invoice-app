@@ -7,7 +7,7 @@ import InvoiceForm from './components/invoice/InvoiceForm/InvoiceForm';
 import { useInvoices } from './hooks/useInvoices';
 
 const App: React.FC = () => {
-    const { isFormOpen, closeInvoiceForm, /*, editingInvoice*/ } = useInvoices();//@todo hide
+    const { isFormOpen, closeInvoiceForm, activeInvoiceId } = useInvoices();
 
     return (
         <div className="layout">
@@ -25,13 +25,12 @@ const App: React.FC = () => {
 
             </main>
 
-            {isFormOpen && (
+            {isFormOpen && activeInvoiceId && (
                 <InvoiceForm
                     isOpen={isFormOpen}
                     onClose={closeInvoiceForm}
-                    invoiceId={'3456364'}
-                    initialInvoice={/*editingInvoice*/null} // Pass the invoice being edited, or null for new
-                />//@todo hide
+                    initialInvoice={null}
+                />
             )}
 
         </div>

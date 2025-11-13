@@ -30,6 +30,10 @@ export const generateInvoiceId = (): string => {
     return id;
 };
 
+export const generateItemId = (): string => {
+    return crypto.randomUUID?.() ?? `item-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+};
+
 export const calculatePaymentDue = (createdAt: string, paymentTerms: number): string => {
     const date = new Date(createdAt);
     date.setDate(date.getDate() + paymentTerms);
