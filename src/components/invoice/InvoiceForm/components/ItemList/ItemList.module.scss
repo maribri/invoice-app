@@ -1,0 +1,65 @@
+.items {
+  &__title {
+    margin: 0 0 var(--spacing-md);
+    color: #777F98;//@todo needs a token
+    line-height: var(--line-height-normal);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-xs);
+  }
+
+  &__headers {
+    //@extend .item-row !optional;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-xs);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr auto;
+    gap: var(--spacing-md);
+    margin-bottom: 1.125rem;
+
+    input {
+      width: 100%;
+      min-width: 4.5rem;
+    }
+  }
+
+  &__delete-btn { // @todo refactor, use common button, check gaps
+    border-radius: var(--border-radius-xs);
+    background-color: transparent;
+
+    & > span {
+      width: 2.25rem;
+      height: 2.25rem;
+      font-size: 1rem;
+      color: var(--color-text-tertiary);
+      background-color: transparent;
+    }
+
+    & svg {
+      fill: currentColor;
+      width: 0.815em;
+      height: 1em;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      & > span {
+        color: var(--color-danger);
+      }
+    }
+  }
+
+  &__add-btn {
+    /* */
+  }
+}

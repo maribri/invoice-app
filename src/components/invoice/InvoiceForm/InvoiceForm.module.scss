@@ -95,7 +95,7 @@
   }
 
   &__actions {
-    margin: auto -3.5rem 0;
+    margin: 1rem -3.5rem 0;
     padding: var(--spacing-xl) 3.5rem;
     display: flex;
     justify-content: flex-end;
@@ -104,76 +104,21 @@
     border-top-right-radius: var(--border-radius-lg);
     position: sticky;
     bottom: 0;
-    box-shadow: 0 -15px 28px 0 rgba(72, 84, 159, 0.1);// @todo compare with design
+    box-shadow: 0 -15px 28px 0 rgba(72, 84, 159, 0.1); // @todo compare with design
     //box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
   }
 
   &__discard-btn {
     margin-right: auto;
   }
-}
 
-.items {
-  &__title {
-    margin: 0 0 var(--spacing-md);
-    color: #777F98;
-    line-height: var(--line-height-normal);
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: var(--letter-spacing-xs);
-  }
-
-  &__headers {
-    //@extend .item-row !optional;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-xs);
-  }
-
-  &__list {
-    margin: 0;
-    padding: 0;
-  }
-
-  &__row {
-    display: grid;
-    grid-template-columns: 3fr 1fr 2fr 1fr auto;
-    gap: var(--spacing-md);
-    margin-bottom: 1.125rem;
-
-    input {
-      width: 100%;
-    }
-  }
-
-  &__delete-btn { // @todo refactor, use common button, check gaps
-    border-radius: var(--border-radius-xs);
-    background-color: transparent;
-
-    & > span {
-      width: 2.25rem;
-      height: 2.25rem;
-      font-size: 1rem;
-      color: var(--color-text-tertiary);
-      background-color: transparent;
-    }
-
-    & svg {
-      fill: currentColor;
-      width: 0.815em;
-      height: 1em;
-    }
-
-    &:hover {
-      background-color: transparent;
-
-      & > span {
-        color: var(--color-danger);
-      }
-    }
-  }
-
-  &__add-btn {
-  /* */
-  }
+  /*&__error {
+    padding: 12px;
+    background-color: rgba(236, 87, 87, 0.1);
+    border-left: 3px solid #ec5757;
+    color: #ec5757;
+    font-size: 14px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }*/
 }

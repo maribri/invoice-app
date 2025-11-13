@@ -9,4 +9,20 @@
   &__label {
     font-size: var(--font-size-xs);
   }
+
+  // @todo implement error styles
+  /*.field__error {
+    display: block;
+    color: #ec5757;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.field__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}*/
 }
